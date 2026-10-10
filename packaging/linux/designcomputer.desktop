@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Design Computer
+Comment=Parametric CAD for mechanical parts
+Exec=designcomputer-app %F
+Icon=designcomputer
+Categories=Graphics;Engineering;
+MimeType=application/x-designcomputer;
+StartupWMClass=designcomputer
+Terminal=false

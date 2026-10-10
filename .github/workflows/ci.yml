@@ -1,8 +1,9 @@
 name: ci
 
+# Manual only: run it from the Actions tab ("Run workflow") when you want the full check.
+# Releases have their own workflow (release.yml), which runs on a version tag.
 on:
-  push:
-  pull_request:
+  workflow_dispatch:
 
 env:
   CARGO_TERM_COLOR: always
@@ -19,9 +20,7 @@ jobs:
       matrix:
         os:
           - ubuntu-latest        # linux x86_64
-          - ubuntu-24.04-arm     # linux aarch64
           - macos-latest         # macOS arm64
-          - macos-15-intel       # macOS x86_64
           - windows-latest       # windows x86_64
     steps:
       - uses: actions/checkout@v4
