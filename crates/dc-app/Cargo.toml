@@ -1,0 +1,31 @@
+[package]
+name = "dc-app"
+version.workspace = true
+edition.workspace = true
+publish.workspace = true
+
+[[bin]]
+name = "designcomputer-app"
+path = "src/main.rs"
+
+[dependencies]
+dc-doc = { path = "../dc-doc" }
+dc-io = { path = "../dc-io" }
+dc-kernel = { path = "../dc-kernel" }
+dc-math = { path = "../dc-math" }
+dc-render = { path = "../dc-render" }
+dc-sketch = { path = "../dc-sketch" }
+serde.workspace = true
+serde_json.workspace = true
+# Dev tooling for agents (MIT): tags widgets so an MCP client can inspect and drive the real UI.
+# Inert unless the `devtools` feature attaches the runtime (see .edev.toml).
+eguidev = "0.1"
+eguidev_runtime = { version = "0.1", optional = true }
+eframe = { version = "0.35", default-features = false, features = ["default_fonts", "glow", "x11", "wayland"] }
+
+[features]
+# `cargo run -p dc-app --features devtools` lets `edev mcp` (Claude Code) drive the app.
+devtools = ["dep:eguidev_runtime"]
+
+[lints]
+workspace = true

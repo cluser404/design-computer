@@ -1,0 +1,26 @@
+[workspace]
+resolver = "2"
+members = ["crates/dc-math", "crates/dc-doc", "crates/dc-sketch", "crates/dc-kernel", "crates/dc-features", "crates/dc-io", "crates/dc-render", "crates/dc-protocol", "crates/dc-app", "crates/dc-cli"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+publish = false
+license = "MIT"
+
+[workspace.dependencies]
+# libm: pure-Rust, platform-independent transcendental functions (determinism contract, AGENTS.md §4.5)
+libm = "0.2"
+# serde/serde_json: protocol and log serialization
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+# schemars: JSON Schema generated from the Rust types (single source of truth for the protocol)
+schemars = "1"
+# blake3: fast, deterministic hashing for IDs and state hashes
+blake3 = "1"
+
+[workspace.lints.clippy]
+all = { level = "warn", priority = -1 }
+# Clippy 1.99 suggests `as_chunks` for fixed-size `chunks_exact` loops over GPU vertex data; the
+# slices are validated by their callers and the suggestion changes types for no gain.
+chunks_exact_to_as_chunks = "allow"

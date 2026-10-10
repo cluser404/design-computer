@@ -1,0 +1,21 @@
+[package]
+name = "dc-protocol"
+version.workspace = true
+edition.workspace = true
+publish.workspace = true
+
+[dependencies]
+dc-doc = { path = "../dc-doc" }
+dc-io = { path = "../dc-io" }
+dc-kernel = { path = "../dc-kernel" }
+dc-math = { path = "../dc-math" }
+dc-render = { path = "../dc-render" }
+serde.workspace = true
+serde_json.workspace = true
+schemars.workspace = true
+
+[dev-dependencies]
+tempfile = "3"
+
+[lints]
+workspace = true

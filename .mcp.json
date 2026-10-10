@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "eguidev": {
+      "type": "stdio",
+      "command": "edev",
+      "args": [
+        "mcp"
+      ],
+      "env": {}
+    }
+  }
+}

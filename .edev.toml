@@ -1,0 +1,10 @@
+# How `edev` launches Design Computer for agent-driven testing (see AGENTS.md, "Testing the UI").
+# `edev mcp` (Claude Code), `edev smoke` and `edev eval` all use this. The app is built with the
+# `devtools` feature, which attaches the eguidev runtime and stops the app reading or writing
+# the user's saved settings.
+
+[app]
+command = ["cargo", "run", "--locked", "-p", "dc-app", "--features", "devtools", "--bin", "designcomputer-app"]
+
+[smoke]
+dir = "smoketest"

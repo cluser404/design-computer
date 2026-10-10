@@ -1,0 +1,18 @@
+[package]
+name = "dc-doc"
+version.workspace = true
+edition.workspace = true
+publish.workspace = true
+
+[dependencies]
+dc-features = { path = "../dc-features" }
+dc-math = { path = "../dc-math" }
+dc-kernel = { path = "../dc-kernel" }
+dc-sketch = { path = "../dc-sketch" }
+serde.workspace = true
+serde_json.workspace = true
+blake3.workspace = true
+schemars.workspace = true
+
+[lints]
+workspace = true

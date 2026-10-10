@@ -1,0 +1,17 @@
+[package]
+name = "dc-cli"
+version.workspace = true
+edition.workspace = true
+publish.workspace = true
+
+[[bin]]
+name = "designcomputer"
+path = "src/main.rs"
+
+[dependencies]
+dc-doc = { path = "../dc-doc" }
+dc-protocol = { path = "../dc-protocol" }
+serde_json.workspace = true
+
+[lints]
+workspace = true

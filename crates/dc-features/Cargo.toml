@@ -1,0 +1,13 @@
+[package]
+name = "dc-features"
+version.workspace = true
+edition.workspace = true
+publish.workspace = true
+
+[dependencies]
+dc-math = { path = "../dc-math" }
+dc-kernel = { path = "../dc-kernel" }
+dc-sketch = { path = "../dc-sketch" }
+
+[lints]
+workspace = true

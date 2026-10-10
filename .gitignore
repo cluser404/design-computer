@@ -1,0 +1,29 @@
+# Build output
+/target
+**/*.rs.bk
+
+# edev (agent UI testing) instances
+.edev-instances/
+/tmp/
+
+# Local agent settings (the shared skills in .claude/skills are kept)
+.claude/settings.local.json
+.claude/scratch/
+
+# Documents saved while trying the app (sample files that tests need live under crates/)
+/part.dcad
+/*.dcad
+/*.stl
+/*.png
+
+# Editors and OS
+.idea/
+.vscode/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+
+# Profiling output
+perf.data*
+flamegraph.svg
